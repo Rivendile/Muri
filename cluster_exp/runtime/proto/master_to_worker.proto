@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+service MasterToWorker {
+    rpc Execute (ExecuteRequest) returns (ExecuteResponse) {};
+    rpc Kill (KillRequest) returns (KillResponse) {};
+    rpc ExitCommand (ExitCommandRequest) returns (ExitCommandResponse) {};
+    rpc GetUtil (GetUtilRequest) returns (GetUtilResponse) {};
+}
+
+message JobInfo {
+    uint32 num = 1;
+    repeated uint32 node_id = 2;
+    repeated int32 job_id = 3;
+    repeated string job_name = 4;
+    repeated uint32 batch_size = 5;
+    repeated uint32 iterations = 6;
+    string gpus = 7;
+    repeated uint32 job_counter = 8;
+    uint32 num_gpu = 9;
+}
+
+message ExecuteRequest {
+    JobInfo job_info = 1;
+}
+
+message ExecuteResponse {
+    bool success = 1;
+}
+
+message KillRequest {
+    JobInfo job_info = 1;
+}
+
+message KillResponse {
+    bool success = 1;
+}
+
+message ExitCommandRequest {
+    
+}
+
+message ExitCommandResponse {
+    bool success = 1;
+}
+
+message GetUtilRequest {
+    uint32 secs = 1;
+}
+
+message GetUtilResponse {
+    double gpu_util = 1;
+    double cpu_util = 2;
+    double io_read = 3;
+}

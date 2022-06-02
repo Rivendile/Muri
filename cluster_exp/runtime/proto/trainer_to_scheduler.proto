@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service TrainerToScheduler {
+    rpc RegisterTrainer (RegisterTrainerRequest) returns (RegisterTrainerResponse) {};
+    rpc ReportIterTime (ReportIterTimeRequest) returns (ReportIterTimeResponse) {};
+}
+
+message RegisterTrainerRequest {
+    string trainer_ip = 1;
+    uint32 trainer_port = 2;
+    repeated int32 job_id = 3;
+}
+
+message RegisterTrainerResponse {
+    bool success = 1;
+}
+
+message ReportIterTimeRequest {
+    repeated int32 job_id = 1;
+    repeated double iter_time = 2;
+    repeated double src_utils = 3;
+}
+
+message ReportIterTimeResponse {
+    bool success = 1;
+}

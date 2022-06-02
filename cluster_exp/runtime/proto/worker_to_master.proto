@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+service WorkerToMaster {
+    rpc RegisterWorker (RegisterWorkerRequest) returns (RegisterWorkerResponse) {};
+    rpc Done (DoneRequest) returns (DoneResponse);
+}
+
+message RegisterWorkerRequest {
+    string worker_ip = 1;
+    uint32 worker_port = 2;
+    uint32 num_gpus = 3;
+}
+
+message RegisterWorkerResponse {
+    bool success = 1;
+    uint32 worker_id = 2;
+}
+
+message DoneRequest {
+    int32 job_id = 1;
+    uint32 job_counter = 2;
+    uint32 worker_id = 3;
+    string gpus = 4;
+    int32 returncode = 5;
+}
+
+message DoneResponse {
+    bool success = 1;
+}

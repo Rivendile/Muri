@@ -1,0 +1,12 @@
+*.pyc
+result*
+__pycache__
+test*
+plot*
+trace-data/cluster*
+!trace-data/cluster*.csv
+*.txt
+# *.csv
+*.xlsx
+.DS_Store
+*.out

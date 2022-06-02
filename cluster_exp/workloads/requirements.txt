@@ -1,0 +1,13 @@
+torch
+gym
+tensorflow
+atari-py
+opencv-python
+scikit-image
+tqdm
+pandas
+pathlib
+seaborn
+roboschool
+torchmeta
+torchvision
