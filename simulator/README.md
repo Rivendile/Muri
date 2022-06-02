@@ -3,8 +3,8 @@
 # 0. Content
 - **simulator/** contains code for simulation and is adapted from [Tiresias](https://github.com/SymbioticLab/Tiresias).
   - **cluster_spec/** contains configuration files for cluster, e.g., the number of nodes, the number of GPU per node.
-  - **trace-data/** contains trace for simulation evaluation.
-  - **calc.py** contains computation of metrics.
+  - **trace-data/** contains traces for simulation evaluation.
+  - **calc.py** computes metrics, e.g., avg. JCT, Makespan, and 99th JCT.
   - **cluster.py**, **switch.py**, and **node.py** contain implementations of the cluster.
   - **jobs.py** and **model.py** contain information of the jobs.
   - **flags.py** contains the argument definition method.
@@ -19,5 +19,5 @@
 - Figure 11: ```bash sim_fig11.sh```
 - Figure 12: ```bash sim_fig12.sh```
 - Figure 13: ```bash sim_fig13.sh```
-- Note: The detailed results are stored in ```<repo>/simulator/results/```.
+- Note: The detailed results will be stored in ```<repo>/simulator/results/```.
 

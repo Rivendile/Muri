@@ -9,7 +9,8 @@ This repository contains the source code for our SIGCOMM'22 paper "Multi-Resourc
 
 # 2. Reproduce results (for SIGCOMM'22 artifact evaluation)
 Please refer to ```<repo>/simulator/README.md``` and ```<repo>/cluster_exp/README.md``` for details.
-Note: Due to the execution scripts are highly related to intracompany platform, we only demonstrate the functionality and show the pseudocode of the related scripts (e.g., run.sh, prepare_env.sh). Please adjust to your platform if you would like to execute the testbed experiment.
+
+Note: Due to the execution scripts of testbed experiments are highly related to intracompany platform, we only demonstrate the functionality and show the pseudocode of the related scripts (e.g., run.sh, prepare_env.sh). Please adjust to your platform if you would like to execute the testbed experiment.
 
 
 # 3. Contact
