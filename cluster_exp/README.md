@@ -55,7 +55,7 @@ conda install -c huggingface transformers
 python -m pip install -r <repo>/cluster_exp/workloads/requirements.txt
 ```
 
-### Step 3: prepare datasets (for testbed experiment)
+### Step 5: prepare datasets (for testbed experiment)
 - [Imagenet-1k](https://academictorrents.com/details/a306397ccf9c2ead27155983c254227c0fd938e2) for CV models.
 - [Wikitext](https://huggingface.co/datasets/wikitext) for NLP models.
 Store these datsets in ```<repo>/cluster_exp/datasets/```
