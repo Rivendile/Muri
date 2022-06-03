@@ -42,7 +42,8 @@ cd <repo>/cluster_exp
 make rpc
 
 # other dependencies
-conda install cvxpy
+conda install numpy
+conda install -c conda-forge cvxpy
 conda install pytorch torchvision torchaudio cudatoolkit -c pytorch
 HOROVOD_GPU_OPERATIONS=NCCL python -m pip install horovod
 

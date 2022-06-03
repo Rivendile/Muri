@@ -12,7 +12,21 @@
   - **matching.py** contains the implementation of the matching algorithm for Muri.
   - **run_sim.py** contains the implementation of different scheduling policies.
 
-# 1. Reproduce simulation results (for SIGCOMM'22 artifact evaluation)
+# 1. Environment config
+### Step 1: create conda environment
+```
+# create conda env
+conda create -n muri python=3.8
+conda activate muri
+```
+
+### Step 2: install python dependencies
+```
+conda install numpy
+conda install -c conda-forge cvxpy
+```
+
+# 2. Reproduce simulation results (for SIGCOMM'22 artifact evaluation)
 - ```cd <repo>/simulator```
 - Figure 9: ```bash sim_fig9.sh```
 - Figure 10: ```bash sim_fig10.sh```
