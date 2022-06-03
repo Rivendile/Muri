@@ -35,7 +35,8 @@ conda activate muri
 ### Step 4: install python dependencies
 ```
 # gRPC
-python -m pip install grpcio,grpcio-tools
+python -m pip install grpcio
+python -m pip install grpcio-tools
 
 # prepare rpc
 cd <repo>/cluster_exp
