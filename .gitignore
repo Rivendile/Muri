@@ -65,6 +65,8 @@ cluster_exp/log/
 *.xml
 
 .DS_Store
+cluster_exp/.DS_Store
+simulator/.DS_Store
 
 __pycache__
 cluster_exp/__pycache__/
