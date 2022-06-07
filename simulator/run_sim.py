@@ -86,7 +86,7 @@ flags.DEFINE_integer('multi_resource', 4,
 flags.DEFINE_integer('packing_num', 4, 
                 '''maximum number of packing jobs''')
 flags.DEFINE_float('weight_lbd', 0.0, '''The factor of the lower bound of expected weight (i jobs packing of n resources: i/n)''')
-flags.DEFINE_boolean('autopack', True, '''Unpack job if the combined normalized tput is slower than 1''')
+flags.DEFINE_boolean('autopack', False, '''Unpack job if the combined normalized tput is slower than 1''')
 flags.DEFINE_boolean('print', False, 
                 '''Enable print out information, default is False''')
 flags.DEFINE_boolean('flush_stdout', True, 
