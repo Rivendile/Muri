@@ -31,63 +31,6 @@ import copy
 import flags
 FLAGS = flags.FLAGS
 
-job_time_dict = dict()
-job_time_dict[1] = {"vgg16-16": {"model": "vgg16", "bs": 16, "iter_time": 107, "resource_time": [117, 68, 0]},
-                "vgg19-16": {"model": "vgg19", "bs": 16, "iter_time": 109, "resource_time": [114, 80, 0]},
-                # "resnet50-64": {"model": "resnet50", "bs": 64, "iter_time": 468, "resource_time": [370, 179, 0]},
-                "resnet18-128": {"model": "resnet18", "bs": 128, "iter_time": 779, "resource_time": [711, 110, 0]},
-                "shufflenet_v2_x1_0-128": {"model": "shufflenet_v2_x1_0", "bs": 128, "iter_time": 798, "resource_time": [706, 59, 0]},
-                "bert-4": {"model": "bert", "bs": 4, "iter_time": 178, "resource_time": [0.5, 160, 0]},
-                "gpt2-4": {"model": "gpt2", "bs": 4, "iter_time": 426, "resource_time": [0.6, 410, 0]},
-                "a2c-64": {"model": "a2c", "bs": 64, "iter_time": 517, "resource_time": [514, 14, 0]},
-                "dqn-128": {"model": "dqn", "bs": 128, "iter_time": 490, "resource_time": [446, 8, 0]}}
-job_time_dict[2] = {"vgg16-16": {"model": "vgg16", "bs": 16, "iter_time": 191, "resource_time": [114, 72, 40]},
-                "vgg19-16": {"model": "vgg19", "bs": 16, "iter_time": 205, "resource_time": [115, 83, 41]},
-                # "resnet50-64": {"model": "resnet50", "bs": 64, "iter_time": 590, "resource_time": [375, 179, 75]},
-                "resnet18-128": {"model": "resnet18", "bs": 128, "iter_time": 881, "resource_time": [687, 110, 95]},
-                "shufflenet_v2_x1_0-128": {"model": "shufflenet_v2_x1_0", "bs": 128, "iter_time": 850, "resource_time": [747, 58, 18]},
-                "bert-4": {"model": "bert", "bs": 4, "iter_time": 195, "resource_time": [0.5, 163, 18]},
-                "gpt2-4": {"model": "gpt2", "bs": 4, "iter_time": 464, "resource_time": [0.7, 416, 40]},
-                "a2c-64": {"model": "a2c", "bs": 64, "iter_time": 525, "resource_time": [504, 14, 0.5]},
-                "dqn-128": {"model": "dqn", "bs": 128, "iter_time": 495, "resource_time": [441, 8, 0.6]}}
-job_time_dict[4] = {"vgg16-16": {"model": "vgg16", "bs": 16, "iter_time": 201, "resource_time": [82, 72, 67]},
-                "vgg19-16": {"model": "vgg19", "bs": 16, "iter_time": 212, "resource_time": [84, 85, 73]},
-                # "resnet50-64": {"model": "resnet50", "bs": 64, "iter_time": 666, "resource_time": [378, 180, 151]},
-                "resnet18-128": {"model": "resnet18", "bs": 128, "iter_time": 921, "resource_time": [723, 113, 73]},
-                "shufflenet_v2_x1_0-128": {"model": "shufflenet_v2_x1_0", "bs": 128, "iter_time": 886, "resource_time": [703, 62, 17]},
-                "bert-4": {"model": "bert", "bs": 4, "iter_time": 190, "resource_time": [0.5, 163, 18]},
-                "gpt2-4": {"model": "gpt2", "bs": 4, "iter_time": 433, "resource_time": [0.6, 413, 20]},
-                "a2c-64": {"model": "a2c", "bs": 64, "iter_time": 533, "resource_time": [502, 10, 0.3]},
-                "dqn-128": {"model": "dqn", "bs": 128, "iter_time": 505, "resource_time": [440, 8, 0.4]}}
-job_time_dict[8] = {"vgg16-16": {"model": "vgg16", "bs": 16, "iter_time": 214, "resource_time": [82, 75, 66]},
-                "vgg19-16": {"model": "vgg19", "bs": 16, "iter_time": 226, "resource_time": [82, 88, 60]},
-                # "resnet50-64": {"model": "resnet50", "bs": 64, "iter_time": 650, "resource_time": [379, 182, 156]},
-                "resnet18-128": {"model": "resnet18", "bs": 128, "iter_time": 1010, "resource_time": [784, 117, 77]},
-                "shufflenet_v2_x1_0-128": {"model": "shufflenet_v2_x1_0", "bs": 128, "iter_time": 957, "resource_time": [769, 57, 10]},
-                "bert-4": {"model": "bert", "bs": 4, "iter_time": 192, "resource_time": [0.5, 167, 59]},
-                "gpt2-4": {"model": "gpt2", "bs": 4, "iter_time": 437, "resource_time": [0.6, 419, 49]},
-                "a2c-64": {"model": "a2c", "bs": 64, "iter_time": 555, "resource_time": [502, 14, 0.4]},
-                "dqn-128": {"model": "dqn", "bs": 128, "iter_time": 509, "resource_time": [435, 8, 0.5]}}
-job_time_dict[16] = {"vgg16-16": {"model": "vgg16", "bs": 16, "iter_time": 332, "resource_time": [83, 68, 110]},
-                "vgg19-16": {"model": "vgg19", "bs": 16, "iter_time": 302, "resource_time": [102, 78, 123]},
-                # "resnet50-64": {"model": "resnet50", "bs": 64, "iter_time": 681, "resource_time": [433, 177, 154]},
-                "resnet18-128": {"model": "resnet18", "bs": 128, "iter_time": 1055, "resource_time": [736, 108, 93]},
-                "shufflenet_v2_x1_0-128": {"model": "shufflenet_v2_x1_0", "bs": 128, "iter_time": 1006, "resource_time": [776, 57, 21]},
-                "bert-4": {"model": "bert", "bs": 4, "iter_time": 244, "resource_time": [0.5, 166, 86]},
-                "gpt2-4": {"model": "gpt2", "bs": 4, "iter_time": 491, "resource_time": [0.6, 415, 137]},
-                "a2c-64": {"model": "a2c", "bs": 64, "iter_time": 567, "resource_time": [514, 14, 1.2]},
-                "dqn-128": {"model": "dqn", "bs": 128, "iter_time": 525, "resource_time": [438, 8, 1.2]}}
-job_time_dict[32] = {"vgg16-16": {"model": "vgg16", "bs": 16, "iter_time": 336, "resource_time": [87, 67, 131]},
-                "vgg19-16": {"model": "vgg19", "bs": 16, "iter_time": 356, "resource_time": [89, 79, 141]},
-                # "resnet50-64": {"model": "resnet50", "bs": 64, "iter_time": 753, "resource_time": [358, 177, 156]},
-                "resnet18-128": {"model": "resnet18", "bs": 128, "iter_time": 1059, "resource_time": [712, 111, 93]},
-                "shufflenet_v2_x1_0-128": {"model": "shufflenet_v2_x1_0", "bs": 128, "iter_time": 1019, "resource_time": [799, 56, 24]},
-                "bert-4": {"model": "bert", "bs": 4, "iter_time": 260, "resource_time": [0.5, 166, 133]},
-                "gpt2-4": {"model": "gpt2", "bs": 4, "iter_time": 514, "resource_time": [0.7, 414, 216]},
-                "a2c-64": {"model": "a2c", "bs": 64, "iter_time": 585, "resource_time": [507, 14, 2]},
-                "dqn-128": {"model": "dqn", "bs": 128, "iter_time": 546, "resource_time": [437, 8, 1.6]}}
-
-
 class _TFJobs(object):
 
     '''

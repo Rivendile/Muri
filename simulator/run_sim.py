@@ -14,7 +14,6 @@ import numpy as np
 import util
 import flags
 import jobs
-from jobs import job_time_dict
 import cluster
 import log
 import cvxpy as cp
