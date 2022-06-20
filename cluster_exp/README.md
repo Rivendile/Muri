@@ -69,3 +69,4 @@ Store these datsets in ```<repo>/cluster_exp/datasets/```
   - ```dlas-gpu```: Tiresias
   - ```themis```: Themis
   - ```multi-resource-blossom-same-gpu-unaware```: Muri-L
+- Each test takes about 1 day.
