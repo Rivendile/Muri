@@ -29,7 +29,7 @@ conda install -c conda-forge cvxpy
 # 2. Reproduce simulation results (for SIGCOMM'22 artifact evaluation)
 - ```cd <repo>/simulator```
 - Figure 9: ```bash sim_fig9.sh``` (takes about 2 days)
-- Figure 10: ```bash sim_fig10.sh``` (takes about 2 days)
+- Figure 10: ```bash sim_fig10.sh``` (takes about 4 days)
 - Figure 11: ```bash sim_fig11.sh``` (takes about 2 days)
 - Figure 12: ```bash sim_fig12.sh``` (takes about 2 days)
 - Figure 13: ```bash sim_fig13.sh``` (takes about 1 days)
