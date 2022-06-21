@@ -5,7 +5,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# raw data
+# ====== raw data start here ======
 # Fig 11 algorithm design
 # [trace1, trace2, trace3, trace4]
 Fig11_Muri_L_JCT_raw = [1072009.71,2544642.351,88686.97313,429174.8679]
@@ -32,6 +32,7 @@ Fig13_SRTF_raw = [192543.8569,192494.5694,192277.9859,193081.796]
 Fig13_Muri_S_raw = [182804.0161,135643.09,90861.63341,85502.55387]
 Fig13_Tiresias_raw = [346383.4174,346280.513,345883.8473,347213.2481]
 Fig13_Muri_L_raw = [342921.6979,233034.5164,101383.3536,88686.97313]
+# ====== raw data stop here ======
 
 # calculated ratio
 # Fig 11 algorithm design
