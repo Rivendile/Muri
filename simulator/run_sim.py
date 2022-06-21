@@ -17,6 +17,7 @@ import jobs
 import cluster
 import log
 import cvxpy as cp
+from cvxpy import SolverError
 from matching import Blossom_Same, _Packing
 
 sys.setrecursionlimit(1000000000)
@@ -1901,7 +1902,7 @@ def themis_sim_jobs():
                 pass
 
         if len(JOBS.runnable_jobs)>0:
-            print(len(JOBS.runnable_jobs), 'cvxpy')
+            # print(len(JOBS.runnable_jobs), 'cvxpy')
             scale_factors_array = get_scale_factors_array(JOBS.runnable_jobs)
             isolated_throughputs = get_isolated_throughputs(JOBS.runnable_jobs)
             x = cp.Variable(len(JOBS.runnable_jobs))
@@ -1934,7 +1935,10 @@ def themis_sim_jobs():
             # Make sure that the allocation can fit in the cluster.
             constraints = get_base_constraints(x, scale_factors_array)
             cvxprob = cp.Problem(objective, constraints)
+            # try:
             result = cvxprob.solve(solver='ECOS')
+            # except cp.SolverError:
+            #     result = cvxprob.solve(solver='SCS')
 
             if cvxprob.status != "optimal":
                 print('WARNING: Allocation returned by policy not optimal!')

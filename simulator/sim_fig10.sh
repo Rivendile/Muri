@@ -1,8 +1,8 @@
 #!/bin/bash
 placement=("yarn") 
 # dlas-gpu -- Tiresias; antman -- AntMan; themis -- Themis; multi-resource-blossom-same-gpu-unaware -- Muri-L
-schedule=("dlas-gpu" "antman" "themis" "multi-resource-blossom-same-gpu-unaware" )
-
+# schedule=("dlas-gpu" "antman" "themis" "multi-resource-blossom-same-gpu-unaware" )
+schedule=("themis")
 # philly trace
 jobs=("trace1" "trace1_pr" "trace2" "trace2_pr" "trace3" "trace3_pr" "trace4" "trace4_pr")
 
