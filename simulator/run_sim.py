@@ -1935,22 +1935,37 @@ def themis_sim_jobs():
             # Make sure that the allocation can fit in the cluster.
             constraints = get_base_constraints(x, scale_factors_array)
             cvxprob = cp.Problem(objective, constraints)
-            # try:
-            result = cvxprob.solve(solver='ECOS')
-            # except SolverError:
-                # result = cvxprob.solve(solver='SCS')
+            cvx_usable_flag = True
+            try:
+                result = cvxprob.solve(solver='ECOS')
+            except SolverError:
+                try:
+                    result = cvxprob.solve(solver='SCS')
+                except SolverError:
+                    cvx_usable_flag = False
+                    print('CVXPY Solver Error! Use equal weight')
 
             if cvxprob.status != "optimal":
                 print('WARNING: Allocation returned by policy not optimal!')
 
             for i, rjob in enumerate(JOBS.runnable_jobs):
-                if rjob['total_executed_time']==0:
-                    rjob['sort_val'] = x.value[i]*1e9
+                if cvx_usable_flag:
+                    if rjob['total_executed_time']==0:
+                        rjob['sort_val'] = x.value[i]*1e9
+                    else:
+                        rjob['sort_val'] = x.value[i]/rjob['total_executed_time'] #rounds received
+                    rjob['allocation'] = x.value[i]
+                    rjob['deficit'] = rjob['time_should_received']-rjob['total_executed_time']
+                    rjob['time_should_received'] += x.value[i]*(event_time - last_event_time)
                 else:
-                    rjob['sort_val'] = x.value[i]/rjob['total_executed_time'] #rounds received
-                rjob['allocation'] = x.value[i]
-                rjob['deficit'] = rjob['time_should_received']-rjob['total_executed_time']
-                rjob['time_should_received'] += x.value[i]*(event_time - last_event_time)
+                    if rjob['total_executed_time']==0:
+                        rjob['sort_val'] = 1e9
+                    else:
+                        rjob['sort_val'] = 1/rjob['total_executed_time'] #rounds received
+                    rjob['allocation'] = 1
+                    rjob['deficit'] = rjob['time_should_received']-rjob['total_executed_time']
+                    rjob['time_should_received'] += (event_time - last_event_time)
+
 
             JOBS.runnable_jobs.sort(key=lambda e:(e.__getitem__('sort_val'), e.__getitem__('deficit'), e.__getitem__('allocation')), reverse=True)
 
