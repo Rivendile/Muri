@@ -7,6 +7,7 @@ import numpy as np
 
 # raw data
 # Fig 11 algorithm design
+# [trace1, trace2, trace3, trace4]
 Fig11_Muri_L_JCT_raw = [1072009.71,2544642.351,88686.97313,429174.8679]
 Fig11_Muri_L_w_worstordering_JCT_raw = [1482465.078,3274256.088,146324.4084,614727.4696]
 Fig11_Muri_L_wo_blossom_JCT_raw = [1192784.955,2771637.972,96016.95407,487577.6359]
@@ -15,6 +16,7 @@ Fig11_Muri_L_w_worstordering_Makespan_raw = [21797275.497465,38550614.779056,817
 Fig11_Muri_L_wo_blossom_Makespan_raw = [19653377.905142,34035577.294260,8174135.28,11323021.724947]
 
 # Fig 12 number of jobs in one group
+# [trace1_pr, trace2_pr, trace3_pr, trace4_pr]
 Fig12_antman_JCT_raw = [9808250.677,18163389.280198,2674393.018,4676092.801]
 Fig12_Muri_L_2_JCT_raw = [2624732.58,5243437.378,1348968.422,2170262.136]
 Fig12_Muri_L_3_JCT_raw = [2738962.215,5078885.537,1242056.648,1994350.657]
@@ -25,6 +27,7 @@ Fig12_Muri_L_3_Makespan_raw = [17773101.828110,36971546.424126,5175874.982,10836
 Fig12_Muri_L_4_Makespan_raw = [16639500.393368,31782578.758801,4403652.203,10104721.762665]
 
 # Fig 13 workload distributions
+# [job_type_1, job_type_2, job_type_3, job_type_4]
 Fig13_SRTF_raw = [192543.8569,192494.5694,192277.9859,193081.796]
 Fig13_Muri_S_raw = [182804.0161,135643.09,90861.63341,85502.55387]
 Fig13_Tiresias_raw = [346383.4174,346280.513,345883.8473,347213.2481]

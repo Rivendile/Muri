@@ -4,7 +4,7 @@ placement=("yarn")
 schedule=("antman" "multi-resource-blossom-same-gpu-unaware")
 
 # philly trace
-jobs=("trace1" "trace2" "trace3" "trace4")
+jobs=("trace1_pr" "trace2_pr" "trace3_pr" "trace4_pr")
 
 setups=("n8g8")
 multi_resource=4

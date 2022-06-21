@@ -5,7 +5,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# raw values [trace1, trace1_pr, trace2, trace2_pr, trace3, trace3_pr, trace4, trace4_pr]
+# raw values 
+# [trace1, trace1_pr, trace2, trace2_pr, trace3, trace3_pr, trace4, trace4_pr]
 SRTF_JCT_raw = [1370603.198, 2303543.816, 2665607.375, 4079154.454, 193081.796, 844394.78, 581982.9002, 1430856.446]
 SRSF_JCT_raw = [980140.5699, 1801859.995, 2213949.687, 3384600.437, 185021.8802, 798057.6829, 487167.1688, 1218501.968]
 Muri_S_JCT_raw = [867705.7941, 1467191.905, 1342400.019, 2325962.044, 85502.55387, 537776.6163, 365467.8911, 954225.2866]

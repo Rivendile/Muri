@@ -1937,8 +1937,8 @@ def themis_sim_jobs():
             cvxprob = cp.Problem(objective, constraints)
             # try:
             result = cvxprob.solve(solver='ECOS')
-            # except cp.SolverError:
-            #     result = cvxprob.solve(solver='SCS')
+            # except SolverError:
+                # result = cvxprob.solve(solver='SCS')
 
             if cvxprob.status != "optimal":
                 print('WARNING: Allocation returned by policy not optimal!')
