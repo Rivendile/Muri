@@ -70,3 +70,5 @@ Store these datsets in ```<repo>/cluster_exp/datasets/```
   - ```themis```: Themis
   - ```multi-resource-blossom-same-gpu-unaware```: Muri-L
 - Each test takes about 1 day.
+
+Note: We list the detailed log and evaluation results in ```<repo>/cluster_exp/results```. You can use ```python3 draw.py``` to get the figures shown in our paper.
