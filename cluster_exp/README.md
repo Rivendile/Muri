@@ -71,4 +71,4 @@ Store these datsets in ```<repo>/cluster_exp/datasets/```
   - ```multi-resource-blossom-same-gpu-unaware```: Muri-L
 - Each test takes about 1 day.
 
-Note: We list the detailed log (```cluster.csv``` and ```job.csv```) and evaluation results (```result.out```) in ```<repo>/cluster_exp/results```. You can use ```python3 draw.py``` to get the figures shown in our paper.
+Note: We list the detailed log (```<model>/cluster.csv``` and ```<model>/job.csv```) and evaluation results (```<model>/result.out```) in ```<repo>/cluster_exp/results```. You can use ```python3 draw.py``` to get the figures shown in our paper.
