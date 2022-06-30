@@ -31,6 +31,7 @@
 # Executables
 *.exe
 *.out
+!cluster_exp/results/*/*.out
 *.app
 *.i*86
 *.x86_64
@@ -59,7 +60,6 @@ cluster_exp/workloads/tf_log/
 cluster_exp/workloads/log/
 cluster_exp/job_logs/
 cluster_exp/hostfiles/
-cluster_exp/results/
 cluster_exp/tf_log/
 cluster_exp/log/
 *.xml
