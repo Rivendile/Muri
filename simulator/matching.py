@@ -17,7 +17,7 @@ faulthandler.enable()
 sys.setrecursionlimit(1000000000)
 
 def my_cmp(x,y):
-    if math.isclose(x, y, rel_tol=1e-5):
+    if math.isclose(x, y, abs_tol=1e-5):
         return 0
     if x>y:
         return 1
